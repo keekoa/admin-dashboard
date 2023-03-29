@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arimo', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    padding: 20px;
+    background-color: grey;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template: 100px 1fr / 300px 1fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar content";
+    gap: 20px;
+}
+
+.container div {
+    background-color: white;
+    border-radius: 15px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows: 100px 1fr 1fr;
+    overflow: auto;
+    overflow: overlay
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+ }
+
+.sidebar::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 25px;
+  border: solid 3px transparent;
+  border-right: 4px transparent solid;
+}
+
+.header {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.logo p {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.sidebar-group1 {
+    margin-bottom: 50px;
+}
+
+.sidebar-group2 {
+    align-self: self-end;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 18px 28px;
+    border-bottom: 1px solid #dad9d9;
+}
+
+.sidebar a:first-child li {
+    border-top: 1px solid #dad9d9;
+}
+
+.sidebar-group2 a:last-child li {
+    border-bottom: none;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.sidebar i {
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
