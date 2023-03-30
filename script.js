@@ -3,9 +3,6 @@ document.getElementById('search-icon').addEventListener('click', () => {
     document.getElementById('search-bar').focus();
 });
 
-// Resposive scrolling
-// document.querySelector('.content')
-
 // Dark mode
 document.addEventListener('DOMContentLoaded', (e) => {
     document.documentElement.setAttribute('data-theme', 'light');

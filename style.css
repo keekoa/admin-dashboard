@@ -13,6 +13,7 @@
     --menu-hover: #f1f5f9;
     --button-hover: #94a3b86c;
     --border: #33415521;
+    --placeholder: #354253;;
 }
 
 [data-theme="dark"] {
@@ -28,6 +29,7 @@
     --menu-hover: #f1f5f9;
     --button-hover: #94a3b86c;
     --border: #33415521;
+    --placeholder: #cbd5e1;
   }
 
 * {
@@ -227,7 +229,7 @@ body {
 .search i {
     font-size: 1.25rem;
     cursor: pointer;
-    color: var(--icon);
+    color: var(--placeholder);
 }
 
 .search input[type="search"] {
@@ -243,6 +245,7 @@ body {
     min-width: 300px;
     max-width: 70%;
     font-size: 1.2rem;
+    color: var(--placeholder);
     transition: all ease 0.1s;
 }
 
@@ -254,6 +257,7 @@ body {
     padding: 10px 4px 10px 16px;
     outline: none;
     border: 2px solid var(--icon);
+    color: var(--placeholder);
 }
 
 .search input[type="search"]:focus::placeholder {
@@ -268,6 +272,7 @@ body {
     width: 1.2rem;
     background-image: url("img/xmark-solid.svg");
     background-repeat: no-repeat;
+    color: var(--placeholder);
 }
 
 .profile {
