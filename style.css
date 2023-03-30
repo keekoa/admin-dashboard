@@ -15,6 +15,22 @@ html {
     font-size: 16px;
 }
 
+html::-webkit-scrollbar {
+    width: 8px;
+ }
+
+html::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 25px;
+    border: solid 3px transparent;
+    border-right: 4px transparent solid;
+}
+
 body {
     height: 100vh;
     padding: 20px;
@@ -23,17 +39,18 @@ body {
 
 .container {
     height: 100%;
+    width: 100%;
     display: grid;
     grid-template: auto 1fr / 300px 1fr;
     grid-template-areas: 
-    "sidebar header"
-    "sidebar content";
+    "sidebar main-wrapper"
+    "sidebar main-wrapper";
     gap: 20px;
 }
 
-.container div {
-    background-color: white;
+.sidebar, .header, .content {
     border-radius: 15px;
+    background-color: white;
 }
 
 .sidebar {
@@ -41,7 +58,8 @@ body {
     display: grid;
     grid-template-rows: 100px 1fr 1fr;
     overflow: auto;
-    overflow: overlay
+    overflow: overlay;
+    position: sticky;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -61,8 +79,14 @@ body {
     border-right: 4px transparent solid;
 }
 
+.main-wrapper {
+    grid-area: main-wrapper;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .header {
-    grid-area: header;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-areas: 
@@ -73,7 +97,32 @@ body {
 }
 
 .content {
-    grid-area: content;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+    "projects side-info"
+    "projects side-info";
+    padding: 40px 50px;
+    gap: 30px;
+    align-content: start;
+    overflow-y: auto;
+}
+
+.content::-webkit-scrollbar {
+    width: 8px;
+ }
+
+.content::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+    margin: 16px 0;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 25px;
+    border: solid 3px transparent;
+    border-right: 4px transparent solid;
 }
 
 .logo {
@@ -145,9 +194,10 @@ body {
 
 .search i {
     font-size: 1.25rem;
+    cursor: pointer;
 }
 
-.search input {
+.search input[type="search"] {
     -webkit-appearance: none;
     -ms-appearance: none;
     -moz-appearance: none;
@@ -156,9 +206,29 @@ body {
 
     background-color: #e4e4e4;
     border-radius: 15px;
-    padding: 8px 16px;
+    padding: 8px 4px 8px 16px;
     min-width: 300px;
     max-width: 70%;
+    font-size: 1.2rem;
+    transition: all ease 0.1s;
+}
+
+.search input[type="search"]:focus {
+    padding: 10px 4px 10px 16px;
+}
+
+.search input[type="search"]:focus::placeholder {
+    color: transparent;
+}
+
+.search input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    cursor: pointer;
+
+    height: 1.2rem;
+    width: 1.2rem;
+    background-image: url("img/xmark-solid.svg");
+    background-repeat: no-repeat;
 }
 
 .profile {
@@ -166,20 +236,35 @@ body {
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
 }
 
 .profile i {
     font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #c7c7c7;
+    padding: 10px 12px;
+    border-radius: 10px;
 }
 
 .profile img {
     width: 50px;
+    cursor: pointer;
 }
 
 .profile p {
     font-size: 1.3rem;
     font-weight: 500;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.profile * {
+    transition: all ease 0.1s;
+}
+
+.profile *:hover {
+    transform: scale(1.025);
 }
 
 .intro {
@@ -204,12 +289,21 @@ body {
     font-weight: 500;
 }
 
+.intro * {
+    transition: all ease 0.1s;
+}
+
+.intro *:not(p:nth-child(1)):hover {
+    transform: scale(1.025);
+    cursor: pointer;
+}
+
 .option {
     grid-area: option;
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .option button {
@@ -220,4 +314,139 @@ body {
     padding: 10px 30px;
     font-size: 1.3rem;
     font-weight: 500;
+    transition: all ease 0.1s;
+}
+
+.option button:hover {
+    transform: scale(1.1);
+}
+
+.project-container {
+    grid-area: projects;
+}
+
+.side-info {
+    grid-area: side-info;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content h1 {
+    margin-bottom: 10px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px, 1fr));
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px;
+    justify-content: center;
+}
+
+.project-item {
+    border-radius: 15px;
+    background-color: rgb(223, 223, 223);
+
+    display: grid;
+    grid-template-columns: 15px 1fr;
+    grid-template-areas: 
+    "project-deco project-content"
+    "project-deco project-content";
+    gap: 20px;
+}
+
+.project-deco {
+    grid-area: project-deco;
+    background-color: rgb(217, 255, 0);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.project-content {
+    grid-area: project-content;
+    padding: 30px 30px 30px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.project-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    font-size: 1.2rem;
+}
+
+.project-button {
+    grid-area: project-button;
+    align-self: flex-end;
+    display: flex;
+    gap: 20px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all ease 0.1s;
+}
+
+.project-button:hover {
+    transform: scale(1.025);
+}
+
+.project-button i:hover {
+    transform: scale(1.05);
+}
+
+.annoucements {
+    background-color: rgb(223, 223, 223);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.announcement-item {
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.announcement-item:last-child {
+    border: none;
+}
+
+.announcement-item h2 {
+    font-size: 1.2rem;
+}
+
+.announcement-item p {
+    font-size: 1rem;
+}
+
+.trending {
+    background-color: rgb(223, 223, 223);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.trending-item {
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+    align-items: center;
+}
+
+.trending-item h2 {
+    font-size: 1.3rem;
+}
+
+.trending-item p {
+    font-size: 1rem;
+}
+
+.trending img {
+    height: 50px;
+    border-radius: 50%;
 }

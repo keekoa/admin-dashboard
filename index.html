@@ -7,6 +7,7 @@
         <title>Admin Dashboard</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/599907edde.js" crossorigin="anonymous"></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <div class="container">
@@ -33,30 +34,160 @@
                     </ul>
                 </div>
             </div>
-            <div class="header">
-                <div class="search">
-                    <i class="fa-solid fa-magnifying-glass"></i><input type="search">
-                </div>
-                <div class="profile">
-                    <i class="fa-solid fa-bell"></i>
-                    <img src="img/profile.gif" alt="profile">
-                    <p>Kole Chaicharee</p>
-                </div>
-                <div class="intro">
-                    <img src="img/profile.gif" alt="profile">
-                    <div>
-                        <p>Hi there,</p>
+            <div class="main-wrapper">
+                <div class="header">
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass" id="search-icon"></i><input type="search" id="search-bar" placeholder="Search">
+                    </div>
+                    <div class="profile">
+                        <img src="img/profile.gif" alt="profile">
                         <p>Kole Chaicharee</p>
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <div class="intro">
+                        <img src="img/profile.gif" alt="profile">
+                        <div>
+                            <p>Hi there,</p>
+                            <p>Kole Chaicharee</p>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <button>New</button>
+                        <button>Upload</button>
+                        <button>Share</button>
                     </div>
                 </div>
-                <div class="option">
-                    <button>New</button>
-                    <button>Upload</button>
-                    <button>Share</button>
+                <div class="content">
+                    <div class="project-container">
+                        <h1>Your Projects</h1>
+                        <div class="projects">
+                            <div class="project-item">
+                                <div class="project-deco"></div>
+                                <div class="project-content">
+                                    <div>
+                                        <h2>Super Cool Project</h2>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti eos culpa voluptatum nostrum in debitis unde.</p>
+                                    </div>
+                                    <div class="project-button">
+                                        <i class="fa-regular fa-star"></i><i class="fa-regular fa-eye"></i><i class="fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-deco"></div>
+                                <div class="project-content">
+                                    <div>
+                                        <h2>Less Cool Project</h2>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti eos culpa voluptatum nostrum in debitis unde, aspernatur corporis possimus autem.</p>
+                                    </div>
+                                    <div class="project-button">
+                                        <i class="fa-regular fa-star"></i><i class="fa-regular fa-eye"></i><i class="fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-deco"></div>
+                                <div class="project-content">
+                                    <div>
+                                        <h2>Impossible App</h2>
+                                        <p>Corrupti eos culpa voluptatum nostrum in debitis unde, aspernatur corporis possimus autem voluptatem ullam id minus amet fugiat totam repudiandae incidunt quis?</p>
+                                    </div>
+                                    <div class="project-button">
+                                        <i class="fa-regular fa-star"></i><i class="fa-regular fa-eye"></i><i class="fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-deco"></div>
+                                <div class="project-content">
+                                    <div>
+                                        <h2>Easy Peasy App</h2>
+                                        <p>Amet consectetur adipisicing elit. Corrupti eos culpa voluptatum nostrum in debitis unde, aspernatur corporis possimus autem voluptatem ullam id minus amet fugiat totam repudiandae incidunt quis?</p>
+                                    </div>
+                                    <div class="project-button">
+                                        <i class="fa-regular fa-star"></i><i class="fa-regular fa-eye"></i><i class="fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-deco"></div>
+                                <div class="project-content">
+                                    <div>
+                                        <h2>Ad Blocker</h2>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti eos nostrum in debitis unde, possimus autem voluptatem ullam id minus amet fugiat totam repudiandae incidunt quis?</p>
+                                    </div>
+                                    <div class="project-button">
+                                        <i class="fa-regular fa-star"></i><i class="fa-regular fa-eye"></i><i class="fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-deco"></div>
+                                <div class="project-content">
+                                    <div>
+                                        <h2>Money Maker</h2>
+                                        <p>Lorem ipsum dolor sit, corrupti eos culpa voluptatum nostrum in debitis unde, aspernatur corporis possimus autem voluptatem ullam id minus amet fugiat totam repudiandae.</p>
+                                    </div>
+                                    <div class="project-button">
+                                        <i class="fa-regular fa-star"></i><i class="fa-regular fa-eye"></i><i class="fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-info">
+                        <div class="annoucemnet-container">
+                            <h1>Annoucements</h1>
+                            <div class="annoucements">
+                                <div class="announcement-item">
+                                    <h2>Site Maintenance</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque vel deleniti assumenda quo incidunt corrupti qui iure modi, reiciendis nisi laboriosam? Possimus incidunt adipisci esse quos, officiis veritatis aut repudiandae?</p>
+                                </div>
+                                <div class="announcement-item">
+                                    <h2>Community Share Day</h2>
+                                    <p>Lorem ipsum dolor consectetur adipisicing elit. Deleniti assumenda modi, reiciendis nisi laboriosam? Possimus incidunt adipisci esse quos, officiis veritatis aut repudiandae?</p>
+                                </div>
+                                <div class="announcement-item">
+                                    <h2>Updated Privacy Policy</h2>
+                                    <p>Lorem ipsum dolor elit. Neque vel quo incidunt iure modi, reiciendis nisi laboriosam? Possimus incidunt adipisci esse quos, officiis veritatis aut repudiandae?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trending-container">
+                            <h1>Trending</h1>
+                            <div class="trending">
+                                <div class="trending-item">
+                                    <img src="img/profile2.gif" alt="profile">
+                                    <div>
+                                        <h2>@tegan</h2>
+                                        <p>World Peace Builder</p>
+                                    </div>
+                                </div>
+                                <div class="trending-item">
+                                    <img src="img/profile2.gif" alt="profile">
+                                    <div>
+                                        <h2>@morgan</h2>
+                                        <p>Super Cool Project</p>
+                                    </div>
+                                </div>
+                                <div class="trending-item">
+                                    <img src="img/profile2.gif" alt="profile">
+                                    <div>
+                                        <h2>@kendall</h2>
+                                        <p>Life Changing App</p>
+                                    </div>
+                                </div>
+                                <div class="trending-item">
+                                    <img src="img/profile2.gif" alt="profile">
+                                    <div>
+                                        <h2>@alex</h2>
+                                        <p>No Traffic Maker</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="content">
-
             </div>
         </div>
     </body>
