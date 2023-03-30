@@ -1,7 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
-
+    --background: #e2e8f0;
+    --section-background: #f8fafc;
+    --item-background: #e2e8f0;
+    --item-deco: #0004ff65;
+    --icon: #1e293b;
+    --button: #e2e8f0;
+    --subject-text: #1e293b;
+    --description: #354253;
+    --scroll: #94a3b8;
+    --menu-hover: #f1f5f9;
+    --button-hover: #94a3b86c;
+    --border: #33415521;
 }
 
 * {
@@ -25,7 +36,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #c7c7c7;
+    background: var(--scroll);
     border-radius: 25px;
     border: solid 3px transparent;
     border-right: 4px transparent solid;
@@ -34,7 +45,7 @@ html::-webkit-scrollbar-thumb {
 body {
     height: 100vh;
     padding: 20px;
-    background-color: rgb(224, 224, 224);
+    background-color: var(--background);
 }
 
 .container {
@@ -50,7 +61,7 @@ body {
 
 .sidebar, .header, .content {
     border-radius: 15px;
-    background-color: white;
+    background-color: var(--section-background);
 }
 
 .sidebar {
@@ -73,7 +84,7 @@ body {
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background: #c7c7c7;
+    background: var(--scroll);
     border-radius: 25px;
     border: solid 3px transparent;
     border-right: 4px transparent solid;
@@ -119,22 +130,28 @@ body {
 }
 
 .content::-webkit-scrollbar-thumb {
-    background: #c7c7c7;
+    background: var(--scroll);
     border-radius: 25px;
     border: solid 3px transparent;
     border-right: 4px transparent solid;
 }
 
 .logo {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    display: flex;
     align-items: center;
-    margin: 0 20px;
+    justify-content: center;
+}
+
+.logo i:first-child {
+    margin-right: 10px;
+    font-size: 3rem;
+    color: var(--icon);
 }
 
 .logo p {
     font-size: 1.4rem;
     font-weight: 500;
+    color: var(--icon);
 }
 
 .sidebar-group1 {
@@ -151,12 +168,12 @@ body {
 
 .sidebar li {
     padding: 18px 28px;
-    border-bottom: 1px solid #dad9d9;
+    border-bottom: 1px solid var(--border);
     transition: all ease 0.2s;
 }
 
 .sidebar a:first-child li {
-    border-top: 1px solid #dad9d9;
+    border-top: 1px solid var(--border);
 }
 
 .sidebar-group2 a:last-child li {
@@ -165,12 +182,12 @@ body {
 
 .sidebar a {
     text-decoration: none;
-    color: black;
+    color: var(--subject-text);
     font-size: 1.3rem;
 }
 
 .sidebar li:hover {
-    background-color: rgb(240, 240, 240);
+    background-color: var(--menu-hover);
     padding-top: 25px;
     padding-bottom: 25px;
 }
@@ -195,6 +212,7 @@ body {
 .search i {
     font-size: 1.25rem;
     cursor: pointer;
+    color: var(--icon);
 }
 
 .search input[type="search"] {
@@ -204,7 +222,7 @@ body {
     appearance: none;
     border: none;
 
-    background-color: #e4e4e4;
+    background-color: var(--item-background);
     border-radius: 15px;
     padding: 8px 4px 8px 16px;
     min-width: 300px;
@@ -215,6 +233,8 @@ body {
 
 .search input[type="search"]:focus {
     padding: 10px 4px 10px 16px;
+    outline: none;
+    border: 2px solid var(--icon);
 }
 
 .search input[type="search"]:focus::placeholder {
@@ -237,12 +257,13 @@ body {
     justify-content: end;
     align-items: center;
     gap: 10px;
+    color: var(--subject-text);
 }
 
 .profile i {
     font-size: 1.5rem;
     cursor: pointer;
-    background-color: #c7c7c7;
+    background-color: var(--button);
     padding: 10px 12px;
     border-radius: 10px;
 }
@@ -265,6 +286,7 @@ body {
 
 .profile *:hover {
     transform: scale(1.025);
+    background-color: var(--button-hover);
 }
 
 .intro {
@@ -272,6 +294,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+    color: var(--subject-text);
 }
 
 .intro img {
@@ -310,15 +333,17 @@ body {
     all: unset;
     cursor: pointer;
     border-radius: 50px;
-    background-color: #dad9d9;
+    background-color: var(--button);
     padding: 10px 30px;
     font-size: 1.2rem;
     font-weight: 500;
     transition: all ease 0.1s;
+    color: var(--subject-text);
 }
 
 .option button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    background-color: var(--button-hover);
 }
 
 .project-container {
@@ -336,6 +361,7 @@ body {
     margin-bottom: 16px;
     font-size: 1.8rem;
     font-weight: 600;
+    color: var(--subject-text);
 }
 
 .projects {
@@ -348,7 +374,7 @@ body {
 
 .project-item {
     border-radius: 15px;
-    background-color: rgb(223, 223, 223);
+    background-color: var(--item-background);
 
     display: grid;
     grid-template-columns: 15px 1fr;
@@ -356,11 +382,16 @@ body {
     "project-deco project-content"
     "project-deco project-content";
     gap: 20px;
+    transition: all ease 0.1s;
+}
+
+.project-item:hover {
+    transform: scale(1.025);
 }
 
 .project-deco {
     grid-area: project-deco;
-    background-color: rgb(217, 255, 0);
+    background-color: var(--item-deco);
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
@@ -377,10 +408,18 @@ body {
 .project-content h2 {
     font-size: 1.4rem;
     margin-bottom: 10px;
+    cursor: pointer;
+    transition: all ease 0.1s;
+    color: var(--subject-text);
+}
+
+.project-content h2:hover {
+    transform: scale(1.025);
 }
 
 .project-content p {
     font-size: 1.2rem;
+    color: var(--description);
 }
 
 .project-button {
@@ -391,6 +430,7 @@ body {
     font-size: 1.3rem;
     cursor: pointer;
     transition: all ease 0.1s;
+    color: var(--icon);
 }
 
 .project-button:hover {
@@ -402,14 +442,14 @@ body {
 }
 
 .annoucements {
-    background-color: rgb(223, 223, 223);
+    background-color: var(--item-background);
     border-radius: 15px;
     padding: 30px;
 }
 
 .announcement-item {
     padding: 20px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -421,14 +461,22 @@ body {
 
 .announcement-item h2 {
     font-size: 1.2rem;
+    transition: all ease 0.1s;
+    color: var(--subject-text);
+}
+
+.announcement-item h2:hover {
+    transform: scale(1.025);
+    cursor: pointer;
 }
 
 .announcement-item p {
     font-size: 1rem;
+    color: var(--description);
 }
 
 .trending {
-    background-color: rgb(223, 223, 223);
+    background-color: var(--item-background);
     border-radius: 15px;
     padding: 30px;
 }
@@ -442,13 +490,22 @@ body {
 
 .trending-item h2 {
     font-size: 1.3rem;
+    color: var(--subject-text);
 }
 
 .trending-item p {
     font-size: 1rem;
+    color: var(--description);
 }
 
 .trending img {
     height: 50px;
     border-radius: 50%;
+}
+
+.trending-item h2:hover, .trending img:hover {
+    transition: all ease 0.1s;
+    transform: scale(1.025);
+    cursor: pointer;
+    text-decoration: overline;
 }

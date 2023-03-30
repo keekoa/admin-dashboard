@@ -4,4 +4,4 @@ document.getElementById('search-icon').addEventListener('click', () => {
 });
 
 // Resposive scrolling
-document.querySelector('.content').
+// document.querySelector('.content')
