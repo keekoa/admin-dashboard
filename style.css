@@ -4,16 +4,31 @@
     --background: #e2e8f0;
     --section-background: #f8fafc;
     --item-background: #e2e8f0;
-    --item-deco: #0004ff65;
+    --item-deco: #0004ffb0;
     --icon: #1e293b;
     --button: #e2e8f0;
     --subject-text: #1e293b;
     --description: #354253;
-    --scroll: #94a3b8;
+    --scroll: #0004ffb0;
     --menu-hover: #f1f5f9;
     --button-hover: #94a3b86c;
     --border: #33415521;
 }
+
+[data-theme="dark"] {
+    --background: #050a20;
+    --section-background: #0f172a;
+    --item-background: #1e293b;
+    --item-deco: #4446b8;
+    --icon: #f1f5f9;
+    --button: #1e293b;
+    --subject-text: #f1f5f9;
+    --description: #cbd5e1;
+    --scroll: #4446b8;
+    --menu-hover: #f1f5f9;
+    --button-hover: #94a3b86c;
+    --border: #33415521;
+  }
 
 * {
     box-sizing: border-box;
@@ -229,6 +244,10 @@ body {
     max-width: 70%;
     font-size: 1.2rem;
     transition: all ease 0.1s;
+}
+
+.search input[type="search"]::placeholder {
+    color: var(--description);
 }
 
 .search input[type="search"]:focus {
